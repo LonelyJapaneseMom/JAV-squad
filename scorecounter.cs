@@ -9,13 +9,15 @@ public class scorecounter : MonoBehaviour {
 	Text text; 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		text = GetComponent<Text> ();
+		score = PlayerPrefs.GetInt("Score: ");
 		score = 0;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		text.text = "Score: " + score;
+		text.text = "Score: " + score; 
+		PlayerPrefs.SetInt ("Score: ", score);
 	}
 }
