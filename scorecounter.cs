@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,5 +19,6 @@ public class scorecounter : MonoBehaviour {
 	void Update () {
 		text.text = "Score: " + score; 
 		PlayerPrefs.SetInt ("Score: ", score);
+		hello world
 	}
 }
