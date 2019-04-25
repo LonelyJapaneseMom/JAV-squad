@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class buttonscript1 : MonoBehaviour {
+public class buttonscript18 : MonoBehaviour {
 
 	public Button button;
 	public AudioClip correctSound;
@@ -29,7 +29,7 @@ public class buttonscript1 : MonoBehaviour {
 		colorVar.highlightedColor = new Color (r, g, b);
 		button.colors = colorVar;
 		scorecounter.score += 10;
-		StartCoroutine (Correct());
+		StartCoroutine (Correct6());
 		if (button == true) {
 			audioSource = GetComponent<AudioSource>();
 			audioSource.clip = correctSound;
@@ -37,8 +37,8 @@ public class buttonscript1 : MonoBehaviour {
 		}
 	}
 
-	public IEnumerator Correct(){
-		yield return new WaitForSeconds (2);
-		SceneManager.LoadScene ("level 2");
+	public IEnumerator Correct6(){
+		yield return new WaitForSeconds (1);
+		SceneManager.LoadScene ("level 10");
 	}
 }

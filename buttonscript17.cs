@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class buttonscript1 : MonoBehaviour {
+public class buttonscript17 : MonoBehaviour {
 
 	public Button button;
-	public AudioClip correctSound;
+	public AudioClip wrongSound;
 	private AudioSource audioSource;
 
 	// Use this for initialization
@@ -20,25 +20,24 @@ public class buttonscript1 : MonoBehaviour {
 	void Update () {
 		
 	}
-
+		
 	public void ChangeColor() {
-		float r = Random.Range (0f, 0f);
-		float g = Random.Range (1f, 1f);
+		float r = Random.Range (1f, 1f);
+		float g = Random.Range (0f, 0f);
 		float b = Random.Range (0f, 0f);
 		ColorBlock colorVar = button.colors;
 		colorVar.highlightedColor = new Color (r, g, b);
 		button.colors = colorVar;
-		scorecounter.score += 10;
-		StartCoroutine (Correct());
+		StartCoroutine (GameOver6());
 		if (button == true) {
 			audioSource = GetComponent<AudioSource>();
-			audioSource.clip = correctSound;
+			audioSource.clip = wrongSound;
 			audioSource.Play();
 		}
 	}
 
-	public IEnumerator Correct(){
-		yield return new WaitForSeconds (2);
-		SceneManager.LoadScene ("level 2");
+	public IEnumerator GameOver6(){
+		yield return new WaitForSeconds (1);
+		SceneManager.LoadScene ("level 10");
 	}
 }

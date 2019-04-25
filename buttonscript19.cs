@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class buttonscript : MonoBehaviour {
+public class buttonscript19 : MonoBehaviour {
 
 	public Button button; // input for the ui button
 	public AudioClip wrongSound; // input for the audio clip
@@ -29,7 +29,7 @@ public class buttonscript : MonoBehaviour {
 		ColorBlock colorVar = button.colors; // process for the input of the ui button
 		colorVar.highlightedColor = new Color (r, g, b); // process for the colorvar to change color
 		button.colors = colorVar; // process for the ui button
-		StartCoroutine (GameOver()); // method for the ui button to load the next scene after being clicked
+		StartCoroutine (GameOver6()); // method for the ui button to load the next scene after being clicked
 
 		if (button == true) { // condition for the when the ui button is clicked, it will play the sound effect
 			audioSource = GetComponent<AudioSource>(); // Fetch the AudioSource from the GameObject 
@@ -38,8 +38,8 @@ public class buttonscript : MonoBehaviour {
 		}
 	}
 
-	public IEnumerator GameOver(){ // method for the ui button to load new scene 
-		yield return new WaitForSeconds (2); // Suspends the coroutine execution for the given amount of seconds using scaled time
-		SceneManager.LoadScene ("level 2"); // for the ui button to load a new scene
+	public IEnumerator GameOver6() { // method for the ui button to load new scene 
+		yield return new WaitForSeconds (1); // Suspends the coroutine execution for the given amount of seconds using scaled time
+		SceneManager.LoadScene ("gameover"); // for the ui button to load a new scene
 	}
 }
